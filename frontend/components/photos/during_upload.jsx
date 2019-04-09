@@ -43,6 +43,9 @@ class DuringUpload extends React.Component {
     }.bind(this)
     );
   }
+  stopEnter(e) {
+    e.preventDefault();
+  }
   render(){
     let prev, submit, inputTitle, inputDescription, fileF;
     prev = this.state.photoUrl ? <img src={this.state.photoUrl} style={{maxHeight: '300px', maxWidth: '300px'}}/> : null;
@@ -54,13 +57,13 @@ class DuringUpload extends React.Component {
         <React.Fragment>
           <div className="content-new">
             <nav className="change-nav">
+              <div className="add-del">
                 <button id="add-add" className="btn">
                   <Link to='/photos/upload/new'><i className="fas fa-folder-plus plus-fol"></i>Add</Link>
                 </button>
-              <div className="add-del">
                 <button id="delete"><i className="fas fa-times-circle ex-but"></i>Delete</button>
-                <button id="upload1">Upload Photo</button>
               </div>
+                <button id="upload1" onClick={submit}>{this.props.formType}</button>
             </nav>
             <div className="sidebar">
               <div className="inner-sidebar">
@@ -72,14 +75,13 @@ class DuringUpload extends React.Component {
                 </ul>
               </div>
             </div>  
-            <form className="new-photo" onSubmit={submit}>
+            <form className="new-photo" onSubmit={this.stopEnter.bind(this)}>
               <ul>
                 <input type="file" onChange={this.handleFile} className="form-file"/>
                 <li>{prev}</li>
                 <li className="photo-title">{inputTitle}</li>
                 <li className="photo-description">{inputDescription}</li>
               </ul>
-              <button className="sub">{this.props.formType}</button>
             </form>
           </div>
         </React.Fragment>

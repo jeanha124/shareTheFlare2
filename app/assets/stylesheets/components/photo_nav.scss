@@ -90,6 +90,12 @@
   border: 1px solid #ccc;
   font-size: 14px;
   align-items: center;
+  justify-content: space-between;
+}
+
+.add-del {
+  position: relative;
+  left: 70px;
 }
 
 #add-add {
@@ -115,8 +121,8 @@
 }
 
 #upload1 {
-  grid-column: 10;
-  justify-self: end;
+  position: relative;
+  right: 70px;
   width: 100px;
   padding: 5px 8px;
   background: #3030d5;

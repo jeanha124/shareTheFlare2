@@ -1371,6 +1371,11 @@ function (_React$Component) {
       }.bind(this));
     }
   }, {
+    key: "stopEnter",
+    value: function stopEnter(e) {
+      e.preventDefault();
+    }
+  }, {
     key: "render",
     value: function render() {
       var prev, submit, inputTitle, inputDescription, fileF;
@@ -1400,6 +1405,8 @@ function (_React$Component) {
         className: "content-new"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "change-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "add-del"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         id: "add-add",
         className: "btn"
@@ -1407,15 +1414,14 @@ function (_React$Component) {
         to: "/photos/upload/new"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-folder-plus plus-fol"
-      }), "Add")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "add-del"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }), "Add")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         id: "delete"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-times-circle ex-but"
-      }), "Delete"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        id: "upload1"
-      }, "Upload Photo"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), "Delete")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        id: "upload1",
+        onClick: submit
+      }, this.props.formType)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "sidebar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "inner-sidebar"
@@ -1423,7 +1429,7 @@ function (_React$Component) {
         className: "sidebar-ul"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Editing 1 photo:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Title"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Tags"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Albums")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "new-photo",
-        onSubmit: submit
+        onSubmit: this.stopEnter.bind(this)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",
         onChange: this.handleFile,
@@ -1432,9 +1438,7 @@ function (_React$Component) {
         className: "photo-title"
       }, inputTitle), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "photo-description"
-      }, inputDescription)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "sub"
-      }, this.props.formType))));
+      }, inputDescription)))));
     }
   }]);
 
