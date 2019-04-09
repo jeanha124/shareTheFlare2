@@ -36,9 +36,7 @@
   background: #231e1e;
   height: 900px;
   color: white;
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: 24px;
+  display: flex;
 }
 
 .new-photo {
