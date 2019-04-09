@@ -1356,8 +1356,6 @@ function (_React$Component) {
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      var _this3 = this;
-
       e.preventDefault();
       var formData = new FormData();
       formData.append('photo[title]', this.state.title);
@@ -1368,9 +1366,13 @@ function (_React$Component) {
         formData.append('photo[picture]', this.state.photoFile);
       }
 
+      debugger;
+      console.log(this.props.currentUser);
       this.props.action(formData).then(function () {
-        return _this3.props.history.push("/photos/~/".concat(_this3.props.currentUser.display_name));
-      });
+        console.log(this.props.currentUser);
+        debugger;
+        this.props.history.push("/photos/~/".concat(this.props.currentUser.display_name));
+      }.bind(this));
     }
   }, {
     key: "render",
