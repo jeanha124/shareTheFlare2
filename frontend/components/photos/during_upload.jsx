@@ -57,12 +57,12 @@ class DuringUpload extends React.Component {
         <React.Fragment>
           <div className="content-new">
             <nav className="change-nav">
-              <div className="add-del">
+              {/* <div className="add-del">
                 <button id="add-add" className="btn">
-                  <Link to='/photos/upload/new'><i className="fas fa-folder-plus plus-fol"></i>Add</Link>
+                  <Link to='/photos/upload/new'><i className="fas fa-folder-plus plus-fol"></i>  Add</Link>
                 </button>
-                <button id="delete"><i className="fas fa-times-circle ex-but"></i>Delete</button>
-              </div>
+                <button id="delete"><i className="fas fa-times-circle ex-but"></i>  Delete</button>
+              </div> */}
                 <button id="upload1" onClick={submit}>{this.props.formType}</button>
             </nav>
             <div className="sidebar">

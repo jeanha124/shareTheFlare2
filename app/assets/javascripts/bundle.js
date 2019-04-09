@@ -1405,20 +1405,7 @@ function (_React$Component) {
         className: "content-new"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "change-nav"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "add-del"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        id: "add-add",
-        className: "btn"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/photos/upload/new"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-folder-plus plus-fol"
-      }), "Add")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        id: "delete"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-times-circle ex-but"
-      }), "Delete")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         id: "upload1",
         onClick: submit
       }, this.props.formType)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {

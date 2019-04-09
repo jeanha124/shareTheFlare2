@@ -59,6 +59,7 @@
   grid-column: 3;
   grid-row: 1;
   color: #ccc;
+  cursor: not-allowed;
 }
 
 #root {
@@ -99,7 +100,8 @@
 }
 
 #add-add {
-  width: 40px;
+  color: black;
+  width: 49px;
   padding: 3px 8px;
 }
 #add-add:hover {
@@ -109,8 +111,9 @@
 }
 
 #delete {
-  grid-column: 3;
-  width: 55px;
+  color: black;
+  margin: 30px;
+  width: 60px;
   padding: 3px 8px;
 }
 
@@ -121,8 +124,8 @@
 }
 
 #upload1 {
-  position: relative;
-  right: 70px;
+  position: absolute;
+  right: 58px;
   width: 100px;
   padding: 5px 8px;
   background: #3030d5;
