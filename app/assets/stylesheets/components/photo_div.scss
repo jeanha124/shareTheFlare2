@@ -11,6 +11,10 @@
 
 .cover {
     background: url(/assets/great_wall-c072fe9fbd3c32b4e596097e4dcdc84deb7d4a29acc9c4f3292b9c3a2c5f982e.jpg) no-repeat center bottom fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     height: 276px;
 }
 
