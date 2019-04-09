@@ -1,7 +1,8 @@
 .content-content {
   display: flex;
   background: #231e1e;
-  height: 900px;
+  height: 1050px;
+  max-height: 100%;
   color: white;
   font-weight: 700;
   font-size: 30px;
@@ -34,7 +35,8 @@
 
 .content-new {
   background: #231e1e;
-  height: 900px;
+  height: 1085px;
+  max-height: 100%;
   color: white;
   display: flex;
 }
