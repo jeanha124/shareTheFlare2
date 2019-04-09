@@ -122,9 +122,22 @@ html, body {
   border-radius: 50%;
   width: 33px;
   height: 33px;
+  position: absolute;
+  right: -4px;
 }
 
-.avatar:hover {
+.avatar1 {
+  background-image: url("amber.jpg");
+  background-size: cover;
+  border-radius: 50%;
+  width: 33px;
+  height: 33px;
+  position: absolute;
+  right: -4px;
+  top: -15px;
+}
+
+.avatar:hover, .avatar1:hover{
   cursor: pointer;
   
 }

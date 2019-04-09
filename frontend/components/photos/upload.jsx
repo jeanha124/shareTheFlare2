@@ -20,7 +20,7 @@ class Upload extends React.Component {
             <li><Link to={`/photos/~/${this.currentUser.display_name}`}><span className="photostream-photo">Your Photostream</span></Link></li>
           </ul>
           <div className="avatar-drop">
-            <div className="avatar" onClick={this.props.drop}></div>
+            <div className="avatar1" onClick={this.props.drop}></div>
             <ul id="dropdown" className="profile-dropdown">
               <li><h1 id="hello-display">Hello, {this.props.currentUser.display_name}!</h1></li>
               <li><button className="nav-logout" onClick={this.props.logout}>Log Out</button></li>

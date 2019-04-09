@@ -2211,7 +2211,7 @@ function (_React$Component) {
       }, "Your Photostream")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "avatar-drop"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "avatar",
+        className: "avatar1",
         onClick: this.props.drop
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         id: "dropdown",
