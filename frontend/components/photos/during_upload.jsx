@@ -45,11 +45,10 @@ class DuringUpload extends React.Component {
   }
   render(){
     let prev, submit, inputTitle, inputDescription, fileF;
-    prev = this.state.photoUrl ? <img src={this.state.photoUrl} /> : null;
+    prev = this.state.photoUrl ? <img src={this.state.photoUrl} style={{maxHeight: '300px', maxWidth: '300px'}}/> : null;
     submit = this.handleSubmit;
     inputTitle = <input type="text" className="photo-title" value={this.state.title} onChange={this.handleTitle} placeholder="Add title"/>;
     inputDescription = <input type="text" className="photo-description" value={this.state.description} onChange={this.handleDescription} placeholder="Add a description"/>;
-    fileF = <input type="file" onChange={this.handleFile} className="form-file"/>;
    
       return (
         <React.Fragment>
@@ -75,7 +74,7 @@ class DuringUpload extends React.Component {
             </div>  
             <form className="new-photo" onSubmit={submit}>
               <ul>
-                {fileF}
+                <input type="file" onChange={this.handleFile} className="form-file"/>
                 <li>{prev}</li>
                 <li className="photo-title">{inputTitle}</li>
                 <li className="photo-description">{inputDescription}</li>

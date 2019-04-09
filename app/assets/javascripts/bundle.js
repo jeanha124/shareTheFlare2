@@ -1375,7 +1375,11 @@ function (_React$Component) {
     value: function render() {
       var prev, submit, inputTitle, inputDescription, fileF;
       prev = this.state.photoUrl ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: this.state.photoUrl
+        src: this.state.photoUrl,
+        style: {
+          maxHeight: '300px',
+          maxWidth: '300px'
+        }
       }) : null;
       submit = this.handleSubmit;
       inputTitle = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
@@ -1391,11 +1395,6 @@ function (_React$Component) {
         value: this.state.description,
         onChange: this.handleDescription,
         placeholder: "Add a description"
-      });
-      fileF = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "file",
-        onChange: this.handleFile,
-        className: "form-file"
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "content-new"
@@ -1425,7 +1424,11 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Editing 1 photo:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Title"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Tags"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Albums")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "new-photo",
         onSubmit: submit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, fileF, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, prev), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "file",
+        onChange: this.handleFile,
+        className: "form-file"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, prev), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "photo-title"
       }, inputTitle), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "photo-description"
