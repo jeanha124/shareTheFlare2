@@ -21,23 +21,26 @@
 
 
 .fullName, .displayname {
-    position: relative;
+    position: absolute;
     left: 113px;
-    top: 43%;
+    top: 38%;
 }
 
 .fullName {
+    width: 200px;
     font-size: 20px;
     font-weight: 600;
-    color: white;
+    color: slategray;
+    
 }
 
 .displayname {
+    width: 200px;
     font-size: 16px;
     font-weight: 400;
-    color: white;
-    position: relative;
-    top: 41%;
+    color: slategray;
+    position: absolute;
+    top: 45%;
 }
 
 .pic-container {

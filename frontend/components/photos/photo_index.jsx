@@ -37,16 +37,16 @@ class PhotoIndex extends React.Component {
       }
     });
     const latestPhotos = photos.reverse();
-    
+
     return (
       <React.Fragment>
         <MainNav />
         <div className="cover">
+          <div className="user-profile-photo">
+          <h1 className="fullName">{`${this.props.currentUser.fname} ${this.props.currentUser.lname}`}</h1>
+          <h3 className="displayname">{`${this.props.currentUser.display_name}`}</h3>
+          </div>
         </div>
-                <div className="user-profile-photo">
-                <h1 className="fullName">{`${this.props.currentUser.fname} ${this.props.currentUser.lname}`}</h1>
-                <h3 className="displayname">{`${this.props.currentUser.display_name}`}</h3>
-                </div>
         <ul className="profile-nav">
             <li id="about">About</li>
             <li id="photostream">Photostream</li>
