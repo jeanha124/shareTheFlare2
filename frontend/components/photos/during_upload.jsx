@@ -38,12 +38,8 @@ class DuringUpload extends React.Component {
     if (this.state.photoFile) {
       formData.append('photo[picture]', this.state.photoFile);
     }
-    debugger
-    console.log(this.props.currentUser);
     this.props.action(formData).then(function(){
-      console.log(this.props.currentUser);
-      debugger
-      this.props.history.push(`/photos/~/${this.props.currentUser.display_name}`);
+      this.props.history.push(`/photos/~/${this.state.display_name}`);
     }.bind(this)
     );
   }

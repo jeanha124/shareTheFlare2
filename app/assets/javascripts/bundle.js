@@ -1366,12 +1366,8 @@ function (_React$Component) {
         formData.append('photo[picture]', this.state.photoFile);
       }
 
-      debugger;
-      console.log(this.props.currentUser);
       this.props.action(formData).then(function () {
-        console.log(this.props.currentUser);
-        debugger;
-        this.props.history.push("/photos/~/".concat(this.props.currentUser.display_name));
+        this.props.history.push("/photos/~/".concat(this.state.display_name));
       }.bind(this));
     }
   }, {
@@ -1467,6 +1463,7 @@ var msp = function msp(state) {
     title: '',
     description: '',
     currentUserId: state.entities.users[state.session.id].id,
+    display_name: state.entities.users[state.session.id].display_name,
     photoUrl: null,
     photoFile: null
   };
