@@ -1635,16 +1635,18 @@ function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      var photos = this.props.photos.map(function (photo) {
+      var photos = [];
+      this.props.photos.map(function (photo) {
         if (photo.owner_id === _this.props.currentUser.id) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_photo_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
+          photos.push(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_photo_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
             key: photo.id,
             currentUser: _this.props.currentUser,
             photo: photo,
             receivePhoto: _this.props.receivePhoto
-          });
+          }));
         }
       });
+      var latestPhotos = photos.reverse();
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_main_nav_container__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cover"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1667,7 +1669,7 @@ function (_React$Component) {
         className: "photo-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "photo-index"
-      }, photos)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_footer__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+      }, latestPhotos)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_footer__WEBPACK_IMPORTED_MODULE_2__["default"], null));
     }
   }]);
 
