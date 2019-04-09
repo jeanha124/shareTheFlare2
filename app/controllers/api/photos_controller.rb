@@ -1,8 +1,5 @@
 class Api::PhotosController < ApplicationController
-  def index
-      @photos = Photo.all
-  end
-
+  
   def create
     @photo = Photo.new(photos_params)
     @photo.owner_id = current_user.id
@@ -13,16 +10,19 @@ class Api::PhotosController < ApplicationController
     else
       render json: @photo.errors.full_messages, status: 422
     end
-
+    
   end
-
+  
   def show
     @photo = Photo.find(params[:id].to_i)
-    @comments = @photo.comments
-    @tags = @photo.tags
     render :show
   end
 
+  def index
+    @photos = Photo.all
+    )
+  end
+  
   def update
     @photo = current_user.photos.find(params[:id])
     # unless params[:photo][:avatar]
