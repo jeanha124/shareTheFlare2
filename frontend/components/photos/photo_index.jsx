@@ -44,8 +44,8 @@ class PhotoIndex extends React.Component {
         <MainNav />
         <div className="cover">
           <div className="user-profile-photo">
-          <h1 className="fullName">{`${this.props.currentUser.fname} ${this.props.currentUser.lname}`}</h1>
-          <h3 className="displayname">{`${this.props.currentUser.display_name}`}</h3>
+            <h1 className="fullName">{`${this.props.currentUser.fname} ${this.props.currentUser.lname}`}</h1>
+            <h3 className="displayname">{`${this.props.currentUser.display_name}`}</h3>
           </div>
         </div>
         <ul className="profile-nav">

@@ -127,9 +127,9 @@ html, body {
 }
 
 .user-profile-photo {
-  position: absolute;
   top: 215px;
   left: 241px;
+  position: absolute;
   background-image: url("amber.jpg");
   background-size: cover;
   border-radius: 50%;
@@ -137,7 +137,15 @@ html, body {
   height: 100px;
 }
 
-
+.user-profile-photo-show {
+  left: 241px;
+  position: absolute;
+  background-image: url("amber.jpg");
+  background-size: cover;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
 
 .avatar1 {
   background-image: url("amber.jpg");

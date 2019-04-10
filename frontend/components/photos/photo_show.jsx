@@ -51,31 +51,31 @@ class PhotoShow extends React.Component {
         <React.Fragment>
           <MainNav />
           <div className="pic-container">
-            <Link to={`/photos/~/${this.props.currentUser.display_name}`} className="back"><i className="fas fa-arrow-left"></i> Back to Photostream</Link>
-            <img className='superfun-image'
-            src= {
-              `${this.props.photo.photoUrl}`
-            }
-            />
+            {/* <Link to={`/photos/~/${this.props.currentUser.display_name}`} className="back"><i className="fas fa-arrow-left"></i> Back to Photostream</Link> */}
+            <div className="pads center">
+              <img className='superfun-image'
+              src= {
+                `${this.props.photo.photoUrl}`
+              }
+              />
+            </div>
           </div>
-          <content>
-            <div>
-              <nav className="edit-btns">
-                <i className="fas fa-trash edit-btn" onClick={this.handleDelete}></i>
-                <i className="fas fa-edit edit-btn" onClick={this.toggleEdit}></i>
-              </nav>
-              <img className="avatar" src="https://s3.amazonaws.com/share-the-flare-dev/shareTheFlare.png"/>
+          <nav className="edit-btns">
+            <i className="fas fa-trash edit-btn" onClick={this.handleDelete}></i>
+            <i className="fas fa-edit edit-btn" onClick={this.toggleEdit}></i>
+          </nav>
+          <div className="center-content">
+            <div className="user-info">
+              <img className="user-profile-photo-show"/>
               <br />
               <span className="content-show">{this.props.photo.title}</span>
               <br />
               <span className="content-show">{this.props.photo.description}</span>
             </div> 
-          </content>
-          <content>
-          <CommentList />
-          <Comment />
-          <Tag />
-          </content>
+            <CommentList />
+            <Comment />
+            <Tag />
+          </div>
           <Footer />
         </React.Fragment>
       );

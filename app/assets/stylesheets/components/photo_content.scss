@@ -134,8 +134,8 @@
   Cursor: pointer;
   height: 30px;
   padding: 2px;
-  font-size: 30px;
-  color: grey;
+  font-size: 28px;
+  color: #f1f5f6;
 }
 
 .edit-input {
@@ -156,8 +156,9 @@
 }
 
 .edit-btns {
-  position: relative;
-  left: -22%;
+  position: absolute;
+  right: 4%;
+  top: 557px;
 }
 
 .comment-list {
