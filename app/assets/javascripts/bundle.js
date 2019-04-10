@@ -535,7 +535,15 @@ function (_React$Component) {
         className: "sub-nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "explore1"
-      }, "Explore")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_footer__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+      }, "Explore")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "body-background",
+        style: {
+          color: '#212124',
+          backgroundColor: "#f2f5f6"
+        }
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "photo-div"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_footer__WEBPACK_IMPORTED_MODULE_1__["default"], null));
     }
   }]);
 
