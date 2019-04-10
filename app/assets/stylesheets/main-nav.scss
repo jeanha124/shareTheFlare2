@@ -61,6 +61,8 @@
 .activity, .explore1 {
   position: absolute;
   left: 234px;
+  padding: 16px 20px;
+  border-bottom: 4px solid #198fff;
 }
 
 .you-drop {
@@ -89,6 +91,11 @@
   position: absolute;
   left: 331px;
   padding: 16px 20px;
+}
+
+#photostream:hover, #about:hover, #albums:hover, #faves:hover {
+  border-bottom: 4px solid #198fff;
+  cursor: pointer;
 }
 
 #albums {
