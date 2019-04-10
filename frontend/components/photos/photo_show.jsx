@@ -72,9 +72,11 @@ class PhotoShow extends React.Component {
               <br />
               <span className="content-show">{this.props.photo.description}</span>
             </div> 
-            <CommentList />
-            <Comment />
-            <Tag />
+            <div className="comments-container">
+              <CommentList />
+              <Comment />
+              <Tag />
+            </div>
           </div>
           <Footer />
         </React.Fragment>
