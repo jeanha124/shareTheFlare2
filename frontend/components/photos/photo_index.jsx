@@ -2,6 +2,7 @@ import React from 'react';
 import PhotoIndexItem from './photo_index_item';
 import Footer from '../main_tools/footer';
 import MainNav from '../main_tools/main_nav_container';
+import Pagination from '../homepage/pagination';
 
 class PhotoIndex extends React.Component {
   constructor(props){
@@ -56,6 +57,7 @@ class PhotoIndex extends React.Component {
         <div className="body-background" style={{color: '#212124', backgroundColor: "#f2f5f6"}}>
           <div className="photo-div">
             <ul className="photo-index">{latestPhotos}</ul>
+            <Pagination />
           </div>
         </div>
         <Footer />

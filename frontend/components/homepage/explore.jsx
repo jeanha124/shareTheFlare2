@@ -9,7 +9,7 @@ class Explore extends React.Component {
       <React.Fragment>
         <MainNav />
         <nav className="sub-nav">
-          <h1 className="explore1">Explore</h1>
+          <h1 className="explore1 active">Explore</h1>
         </nav>
         <div className="body-background" style={{color: '#212124', backgroundColor: "#f2f5f6"}}>
         <div className="photo-div">
