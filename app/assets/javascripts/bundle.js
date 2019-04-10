@@ -2011,9 +2011,6 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
           className: "fas fa-trash edit-btn",
           onClick: this.handleDelete
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fas fa-edit edit-btn",
-          onClick: this.toggleEdit
         })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "center-content"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -2022,7 +2019,10 @@ function (_React$Component) {
           className: "user-profile-photo-show"
         }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.currentUser.fname, " ", this.currentUser.lname), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
           className: "description-para"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-edit edit-btn",
+          onClick: this.toggleEdit
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "content-show"
         }, this.props.photo.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "content-show"

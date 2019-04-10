@@ -63,7 +63,6 @@ class PhotoShow extends React.Component {
           </div>
           <nav className="edit-btns">
             <i className="fas fa-trash edit-btn" onClick={this.handleDelete}></i>
-            <i className="fas fa-edit edit-btn" onClick={this.toggleEdit}></i>
           </nav>
           <div className="center-content">
             <div className="user-info">
@@ -71,6 +70,7 @@ class PhotoShow extends React.Component {
               <br />
               <h1>{this.currentUser.fname} {this.currentUser.lname}</h1>
               <p className="description-para">
+                <i className="fas fa-edit edit-btn" onClick={this.toggleEdit}></i>
                 <span className="content-show">{this.props.photo.title}</span>
                 <br />
                 <span className="content-show">{this.props.photo.description}</span>
