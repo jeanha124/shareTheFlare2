@@ -53,8 +53,10 @@ class PhotoIndex extends React.Component {
             <li id="albums">Albums</li>
             <li id="faves">Faves</li>
         </ul>
-        <div className="photo-div">
-          <ul className="photo-index">{latestPhotos}</ul>
+        <div className="body-background" style={{color: '#212124', backgroundColor: "#f2f5f6"}}>
+          <div className="photo-div">
+            <ul className="photo-index">{latestPhotos}</ul>
+          </div>
         </div>
         <Footer />
       </React.Fragment>
