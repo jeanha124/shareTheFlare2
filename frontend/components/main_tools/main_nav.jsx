@@ -10,7 +10,7 @@ const mainNav = (props) => (
           <Link to='/explore'><h2 className="explore">Explore</h2></Link>
         </div>
         <div className="right">
-          <input className="main-search" type="text" placeholder="Photos..." ></input>
+          <input className="main-search" type="text" name="search" placeholder="Photos..." />
           <Link to='/photos/upload'><i className="fas fa-cloud-upload-alt cloud"></i></Link>
           <div className="avatar-drop">
             <div className="avatar" onClick={props.drop}></div>

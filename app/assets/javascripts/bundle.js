@@ -944,6 +944,7 @@ var mainNav = function mainNav(props) {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     className: "main-search",
     type: "text",
+    name: "search",
     placeholder: "Photos..."
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/photos/upload"
