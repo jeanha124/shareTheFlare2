@@ -1751,7 +1751,8 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         id: "about"
       }, "About"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        id: "photostream"
+        id: "photostream",
+        className: "active"
       }, "Photostream"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         id: "albums"
       }, "Albums"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -2218,22 +2219,26 @@ function (_React$Component) {
       });
     }
   }, {
+    key: "stopEnter",
+    value: function stopEnter(e) {
+      e.preventDefault();
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.handleSubmit,
-        className: ""
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.stopEnter.bind(this),
+        className: "tag-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
         value: this.state.title,
         onChange: this.updateTitle,
         placeholder: "Add a tag",
-        className: ""
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "submit",
-        value: "Tag",
-        className: ""
-      }));
+        className: "tag-content"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "tag-button",
+        onClick: this.handleSubmit
+      }, "Tag"));
     }
   }]);
 

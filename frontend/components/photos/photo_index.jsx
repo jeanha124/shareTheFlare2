@@ -50,7 +50,7 @@ class PhotoIndex extends React.Component {
         </div>
         <ul className="profile-nav">
             <li id="about">About</li>
-            <li id="photostream">Photostream</li>
+            <li id="photostream" className="active">Photostream</li>
             <li id="albums">Albums</li>
             <li id="faves">Faves</li>
         </ul>

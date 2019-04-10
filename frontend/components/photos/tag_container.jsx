@@ -35,13 +35,17 @@ class Tag extends React.Component {
   updateTitle(e) {
     this.setState({title: e.currentTarget.value});
   }
+  stopEnter(e) {
+    e.preventDefault();
+  }
   render(){
     return (
-      <form onSubmit={this.handleSubmit} className="">
-        <br />
-        <input type="text" value={this.state.title} onChange={this.updateTitle} placeholder="Add a tag" className="" />
-        <input type="submit" value="Tag" className="" />
-      </form>
+      <React.Fragment>
+        <form onSubmit={this.stopEnter.bind(this)} className="tag-container">
+          <input type="text" value={this.state.title} onChange={this.updateTitle} placeholder="Add a tag" className="tag-content" />
+        </form>
+        <button className="tag-button" onClick={this.handleSubmit}>Tag</button>
+      </React.Fragment>
     );
   } 
 }
