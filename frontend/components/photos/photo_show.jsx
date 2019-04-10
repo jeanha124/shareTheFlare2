@@ -11,8 +11,9 @@ class PhotoShow extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      edit: false
+      edit: false,
     };
+    this.currentUser = this.props.currentUser;
     this.toggleEdit = this.toggleEdit.bind(this);
     this.updateTitle = this.updateTitle.bind(this);
     this.updateDescription = this.updateDescription.bind(this);
@@ -68,9 +69,12 @@ class PhotoShow extends React.Component {
             <div className="user-info">
               <img className="user-profile-photo-show"/>
               <br />
-              <span className="content-show">{this.props.photo.title}</span>
-              <br />
-              <span className="content-show">{this.props.photo.description}</span>
+              <h1>{this.currentUser.fname} {this.currentUser.lname}</h1>
+              <p className="description-para">
+                <span className="content-show">{this.props.photo.title}</span>
+                <br />
+                <span className="content-show">{this.props.photo.description}</span>
+              </p>
             </div> 
             <div className="comments-container">
               <CommentList />

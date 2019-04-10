@@ -138,14 +138,26 @@ html, body {
 }
 
 .user-profile-photo-show {
-  left: 241px;
   position: absolute;
+  left: -81px;
   background-image: url("amber.jpg");
   background-size: cover;
   border-radius: 50%;
   width: 70px;
   height: 70px;
 }
+
+.description-para {
+  height: 45px;
+  width: 400px;
+  padding: 10px;
+  border-bottom: 1px solid #cfd6d9;
+}
+.description-para:hover {
+  background-color: lightgray;
+ 
+}
+
 
 .avatar1 {
   background-image: url("amber.jpg");

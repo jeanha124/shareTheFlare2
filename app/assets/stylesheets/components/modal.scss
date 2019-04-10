@@ -46,9 +46,13 @@
 }
 
 .content-show {
-  position: fixed;
-  left: 91px;
+  position: absolute;
+  left: 19px;
   color: black;
+}
+
+.content-show:hover {
+  background-color: gray;
 }
 
 .comment-container {

@@ -1940,6 +1940,7 @@ function (_React$Component) {
     _this.state = {
       edit: false
     };
+    _this.currentUser = _this.props.currentUser;
     _this.toggleEdit = _this.toggleEdit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.updateTitle = _this.updateTitle.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     _this.updateDescription = _this.updateDescription.bind(_assertThisInitialized(_assertThisInitialized(_this)));
@@ -2019,11 +2020,13 @@ function (_React$Component) {
           className: "user-info"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "user-profile-photo-show"
-        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.currentUser.fname, " ", this.currentUser.lname), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+          className: "description-para"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "content-show"
         }, this.props.photo.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "content-show"
-        }, this.props.photo.description)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, this.props.photo.description))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "comments-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_list_container__WEBPACK_IMPORTED_MODULE_6__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_comment_container__WEBPACK_IMPORTED_MODULE_5__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_tag_container__WEBPACK_IMPORTED_MODULE_7__["default"], null))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_footer__WEBPACK_IMPORTED_MODULE_4__["default"], null));
       } else {
