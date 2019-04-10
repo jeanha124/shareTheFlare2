@@ -13,7 +13,8 @@ const msp = state => {
 const mdp = dispatch => {
   return {
     receiveComment: comment => dispatch(receiveComment(comment)),
-    deleteComment: id => dispatch(removeComment(id))
+    deleteComment: id => dispatch(removeComment(id)),
+    commentAppear: () => document.getElementById('comment-body').classList.toggle('show')
   };
 };
 
@@ -37,13 +38,18 @@ class Comment extends React.Component {
     const comment = merge({}, this.state, {body: this.state.body, photo_id: photoId, commenter_id: this.props.currentUser.id});
     this.props.receiveComment(comment).then(this.setState({body: ''}));
   }
+  stopEnter(e) {
+    e.preventDefault();
+  }
   render(){
     return (
-      <form onSubmit={this.handleSubmit} className="">
-        <textarea cols="30" rows="5" value={this.state.body} onChange={this.handleBody} placeholder="Add a comment"/>
-        <br />
-        <input type="submit" value="Comment" className="" />
-      </form>
+      <React.Fragment>
+        <form onSubmit={this.stopEnter.bind(this)} className="comment-form">
+          <textarea cols="50" rows="8" value={this.state.body} onChange={this.handleBody} placeholder="Add a comment" className="comment-body">
+          </textarea>
+        </form>
+        <button className="invis-button" onClick={this.handleSubmit}>Comment</button>
+      </React.Fragment>
     );
   }
 }

@@ -51,6 +51,20 @@
   color: black;
 }
 
+.invis-button {
+  display: block;
+  background-color: #198fff;
+  padding: 10px 25px;
+  border-radius: 4px;
+  color: white;
+  position: absolute;
+  top: 150px;
+  left: 84px;
+}
+
+.invis-button:hover {
+  background-color: #43a3fc;
+}
 
 .comment-container {
   position: relative;

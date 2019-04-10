@@ -1141,6 +1141,9 @@ var mdp = function mdp(dispatch) {
     },
     deleteComment: function deleteComment(id) {
       return dispatch(Object(_actions_comment_actions__WEBPACK_IMPORTED_MODULE_3__["removeComment"])(id));
+    },
+    commentAppear: function commentAppear() {
+      return document.getElementById('comment-body').classList.toggle('show');
     }
   };
 };
@@ -1187,22 +1190,27 @@ function (_React$Component) {
       }));
     }
   }, {
+    key: "stopEnter",
+    value: function stopEnter(e) {
+      e.preventDefault();
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.handleSubmit,
-        className: ""
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.stopEnter.bind(this),
+        className: "comment-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
-        cols: "30",
-        rows: "5",
+        cols: "50",
+        rows: "8",
         value: this.state.body,
         onChange: this.handleBody,
-        placeholder: "Add a comment"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "submit",
-        value: "Comment",
-        className: ""
-      }));
+        placeholder: "Add a comment",
+        className: "comment-body"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "invis-button",
+        onClick: this.handleSubmit
+      }, "Comment"));
     }
   }]);
 
@@ -6384,7 +6392,7 @@ function baseMergeDeep(object, source, key, srcIndex, mergeFunc, customizer, sta
       if (isArguments(objValue)) {
         newValue = toPlainObject(objValue);
       }
-      else if (!isObject(objValue) || (srcIndex && isFunction(objValue))) {
+      else if (!isObject(objValue) || isFunction(objValue)) {
         newValue = initCloneObject(srcValue);
       }
     }
@@ -7899,9 +7907,11 @@ module.exports = root;
  * @returns {*} Returns the property value.
  */
 function safeGet(object, key) {
-  return key == '__proto__'
-    ? undefined
-    : object[key];
+  if (key == '__proto__') {
+    return;
+  }
+
+  return object[key];
 }
 
 module.exports = safeGet;
