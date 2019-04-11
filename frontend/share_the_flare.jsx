@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
   window.dispatch = store.dispatch;
   window.receiveAllUsers = receiveAllUsers;
   
-  
 
 
   ReactDOM.render(<Root store={ store }/>, root);

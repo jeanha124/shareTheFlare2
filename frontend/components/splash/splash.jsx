@@ -9,12 +9,7 @@ class Splash extends React.Component {
   }
   render (){
     // const items = ["https://s3.amazonaws.com/share-the-flare-dev/bench2.jpg", "https://s3.amazonaws.com/share-the-flare-dev/amanda.jpg", "https://s3.amazonaws.com/share-the-flare-dev/amber.jpg"];
-    // let settings = {
-    //   dots: false,
-    //   infinity: true,
-    //   autoplay: true,
-    //   arrows: false,
-    // };
+    // 
     // const content1 = {
     //   margin: 'auto',
     //   paddingBottom: '12px',

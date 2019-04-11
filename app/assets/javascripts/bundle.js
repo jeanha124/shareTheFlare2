@@ -1933,7 +1933,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 
 
 
-
+ // import Slider from 'react-slick';
 
 var PhotoShow =
 /*#__PURE__*/
@@ -2010,7 +2010,12 @@ function (_React$Component) {
       if (this.state.edit === false) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_main_nav_container__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "pic-container"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/photos/~/".concat(this.props.currentUser.display_name),
+          className: "back"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-arrow-left"
+        }), " Back to Photostream"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "pads center"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
           className: "superfun-image",
@@ -2556,6 +2561,7 @@ function (_React$Component) {
       };
 
       if (this.props.formType === 'login') {
+        this.setState(demoUser);
         this.props.processForm(demoUser).then(this.props.closeModal);
       } else {
         this.props.demoLogin(demoUser).then(this.props.closeModal);
@@ -2817,12 +2823,7 @@ function (_React$Component) {
       var _this = this;
 
       // const items = ["https://s3.amazonaws.com/share-the-flare-dev/bench2.jpg", "https://s3.amazonaws.com/share-the-flare-dev/amanda.jpg", "https://s3.amazonaws.com/share-the-flare-dev/amber.jpg"];
-      // let settings = {
-      //   dots: false,
-      //   infinity: true,
-      //   autoplay: true,
-      //   arrows: false,
-      // };
+      // 
       // const content1 = {
       //   margin: 'auto',
       //   paddingBottom: '12px',

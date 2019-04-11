@@ -6,6 +6,7 @@ import Footer from '../main_tools/footer';
 import Comment from './comment_container';
 import CommentList from './comment_list_container';
 import Tag from './tag_container';
+// import Slider from 'react-slick';
 
 class PhotoShow extends React.Component {
   constructor(props){
@@ -52,7 +53,7 @@ class PhotoShow extends React.Component {
         <React.Fragment>
           <MainNav />
           <div className="pic-container">
-            {/* <Link to={`/photos/~/${this.props.currentUser.display_name}`} className="back"><i className="fas fa-arrow-left"></i> Back to Photostream</Link> */}
+            <Link to={`/photos/~/${this.props.currentUser.display_name}`} className="back"><i className="fas fa-arrow-left"></i> Back to Photostream</Link>
             <div className="pads center">
               <img className='superfun-image'
               src= {
@@ -90,11 +91,11 @@ class PhotoShow extends React.Component {
         <React.Fragment>
           <MainNav />
           <div className="pic-container">
-          <img className='superfun-image'
-          src= {
-            `${this.props.photo.photoUrl}`
-          }
-          />
+              <img className='superfun-image'
+              src= {
+                `${this.props.photo.photoUrl}`
+              }
+              />
           </div>
           <content>
             <div>
@@ -129,3 +130,5 @@ export default PhotoShow;
             <span>{this.props.comments.title}</span>
             <span>{this.props.comments.body}</span>
           </div> */}
+
+          
