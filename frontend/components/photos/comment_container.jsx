@@ -24,6 +24,7 @@ class Comment extends React.Component {
     super(props);
     this.state = {
       body: '',
+      photo_id: this.props.photoId,
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleBody = this.handleBody.bind(this);
@@ -34,22 +35,20 @@ class Comment extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     debugger
-    const photoId = this.props.match.params.photoId;
-    const comment = merge({}, this.state, {body: this.state.body, photo_id: photoId, commenter_id: this.props.currentUser.id});
-    this.props.receiveComment(comment).then(this.setState({body: ''}));
+    // const photoId = this.props.match.params.photoId;
+    // const comment = merge({}, this.state, {body: this.state.body, photo_id: photoId, commenter_id: this.props.currentUser.id});
+    // this.props.receiveComment(comment).then(this.setState({body: ''}));
+    this.props.receiveComment(this.state).then(() => this.setState({ body: ''}));
   }
   stopEnter(e) {
     e.preventDefault();
   }
   render(){
     return (
-      <React.Fragment>
-        <form onSubmit={this.stopEnter.bind(this)} className="comment-form">
-          <textarea cols="50" rows="8" value={this.state.body} onChange={this.handleBody} placeholder="Add a comment" className="comment-body">
-          </textarea>
-        </form>
-        <button className="invis-button" onClick={this.handleSubmit}>Comment</button>
-      </React.Fragment>
+        <div>
+          <textarea cols="50" rows="8" value={this.state.body} onChange={this.handleBody} placeholder="Add a comment" className="comment-body" />
+          <button className="invis-button" onClick={this.handleSubmit}>Comment</button>
+        </div>
     );
   }
 }

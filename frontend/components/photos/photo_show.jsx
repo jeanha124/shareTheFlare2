@@ -78,9 +78,9 @@ class PhotoShow extends React.Component {
               </p>
             </div> 
             <div className="comments-container">
-              <CommentList />
+              {/* <CommentList />
               <Comment />
-              <Tag />
+              <Tag /> */}
             </div>
           </div>
           <Footer />
