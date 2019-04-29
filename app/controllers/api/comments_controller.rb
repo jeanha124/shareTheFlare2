@@ -2,27 +2,24 @@ class Api::CommentsController < ApplicationController
   before_action :require_login!
   
   def index
-    @comments = Comment.all
+    comments = Comment.all
   end
   
   def create
-    @comment = Comment.new(comment_params)
-    @comment.user_id = current_user.id
-    @comment.photo_id = params[:photo_id]
-    @comment.save 
+    comment = Comment.new(comment_params)
+    comment.commenter_id = current_user.id
+    comment.photo_id = params[:photo_id]
+    comment.save 
     @photo = Photo.find(@comment.photo_id)
-      render 'api/photos/show'
-    else
-      render json: @comment.errors.full_messages, status: 422
-    end
+    render 'api/photos/show'
   end
 
   def destroy
-    @comment = Comment.find(params[:id])
-    if @comment.destroy
+    comment = Comment.find(params[:id])
+    if comment.destroy
       render :show
     else
-      render json: @comment.errors.full_messages, status: 422
+      render json: comment.errors.full_messages, status: 422
     end
   end
 
