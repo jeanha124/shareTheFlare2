@@ -50,14 +50,16 @@ class PhotoShow extends React.Component {
   }
   render(){
     let commentList = this.props.comments.map(comment => {
-      return <div className="user-comment" key={`${comment.id}`}>
-          <div className="commenter">
-            <div>
-              {comment.display_name}
+      if (comment.photo_id === this.props.photo.id){
+        return <div className="user-comment" key={`${comment.id}`}>
+            <div className="commenter">
+              <div>
+                {comment.display_name}
+              </div>
             </div>
+            <div>{comment.body}</div>
           </div>
-          <div>{comment.body}</div>
-        </div>
+      }
     });
     if (this.state.edit === false){
       return (

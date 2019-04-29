@@ -1610,13 +1610,17 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this3 = this;
+
       var commentList = this.props.comments.map(function (comment) {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "user-comment",
-          key: "".concat(comment.id)
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "commenter"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.display_name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.body));
+        if (comment.photo_id === _this3.props.photo.id) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "user-comment",
+            key: "".concat(comment.id)
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "commenter"
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.display_name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.body));
+        }
       });
 
       if (this.state.edit === false) {
