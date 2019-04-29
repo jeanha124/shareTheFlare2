@@ -17,8 +17,8 @@ export const receiveAllPhotos = () => {
 
 export const receivePhoto = (id) => {
   return dispatch => {
-    return PhotoApiUtil.fetchPhoto(id).then(photo => {
-      return dispatch({type: RECEIVE_PHOTO, photo});
+    return PhotoApiUtil.fetchPhoto(id).then(payload=> {
+      return dispatch({type: RECEIVE_PHOTO, payload});
     });
   }; 
 };
@@ -50,10 +50,10 @@ export const deletePhoto = (photoId) => {
 
 export const createComment = (comment, photoID) => {
   return dispatch => {
-    return CommentApiUtil.createComment(comment, photoID).then(photo => {
+    return CommentApiUtil.createComment(comment, photoID).then(payload => {
       return dispatch({
         type: RECEIVE_PHOTO,
-        photo,
+        payload,
       });
     });
   };

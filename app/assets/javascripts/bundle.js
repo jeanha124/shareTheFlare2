@@ -157,10 +157,10 @@ var receiveAllPhotos = function receiveAllPhotos() {
 };
 var receivePhoto = function receivePhoto(id) {
   return function (dispatch) {
-    return _util_photo_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchPhoto"](id).then(function (photo) {
+    return _util_photo_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchPhoto"](id).then(function (payload) {
       return dispatch({
         type: RECEIVE_PHOTO,
-        photo: photo
+        payload: payload
       });
     });
   };
@@ -197,10 +197,10 @@ var deletePhoto = function deletePhoto(photoId) {
 };
 var createComment = function createComment(comment, photoID) {
   return function (dispatch) {
-    return _util_comment_api_util__WEBPACK_IMPORTED_MODULE_1__["createComment"](comment, photoID).then(function (photo) {
+    return _util_comment_api_util__WEBPACK_IMPORTED_MODULE_1__["createComment"](comment, photoID).then(function (payload) {
       return dispatch({
         type: RECEIVE_PHOTO,
-        photo: photo
+        payload: payload
       });
     });
   };
@@ -1606,7 +1606,6 @@ function (_React$Component) {
       this.props.createComment(comment, this.props.photo.id).then(this.setState({
         body: ''
       }));
-      debugger;
     }
   }, {
     key: "render",
@@ -1614,10 +1613,10 @@ function (_React$Component) {
       var commentList = this.props.comments.map(function (comment) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "user-comment",
-          id: "".concat(comment.id)
+          key: "".concat(comment.id)
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "commenter"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.commenter.display_name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.body));
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.display_name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.body));
       });
 
       if (this.state.edit === false) {
@@ -2724,7 +2723,7 @@ var commentsReducer = function commentsReducer() {
 
   switch (action.type) {
     case _actions_photo_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_PHOTO"]:
-      return lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, action.comments);
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, action.payload.comments);
 
     case _actions_photo_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_COMMENT"]:
       return lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, _defineProperty({}, action.comment.id, action.comment));
@@ -2851,7 +2850,7 @@ var photosReducer = function photosReducer() {
       return action.photos;
 
     case _actions_photo_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PHOTO"]:
-      return lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state, _defineProperty({}, action.photo.id, action.photo));
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state, _defineProperty({}, action.payload.photos.id, action.payload.photos));
 
     case _actions_photo_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_PHOTO"]:
       var newState = lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state);
@@ -3161,9 +3160,7 @@ var createComment = function createComment(comment, photoID) {
   return $.ajax({
     method: 'POST',
     url: "api/photos/".concat(photoID, "/comments"),
-    data: {
-      comment: comment
-    },
+    data: comment,
     processData: false,
     contentType: false
   });

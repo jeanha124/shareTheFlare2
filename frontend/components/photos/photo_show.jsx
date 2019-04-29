@@ -47,14 +47,13 @@ class PhotoShow extends React.Component {
     let comment = new FormData();
     comment.append('comment[body]', this.state.body);
     this.props.createComment(comment, this.props.photo.id).then(this.setState({body: ''}));
-    debugger
   }
   render(){
     let commentList = this.props.comments.map(comment => {
-      return <div className="user-comment" id={`${comment.id}`}>
+      return <div className="user-comment" key={`${comment.id}`}>
           <div className="commenter">
             <div>
-              {comment.commenter.display_name}
+              {comment.display_name}
             </div>
           </div>
           <div>{comment.body}</div>

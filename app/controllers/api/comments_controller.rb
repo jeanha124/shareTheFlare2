@@ -10,7 +10,7 @@ class Api::CommentsController < ApplicationController
     comment.commenter_id = current_user.id
     comment.photo_id = params[:photo_id]
     comment.save 
-    @photo = Photo.find(@comment.photo_id)
+    @photo = Photo.find(comment.photo_id)
     render 'api/photos/show'
   end
 
