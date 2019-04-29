@@ -7,10 +7,10 @@ class Api::CommentsController < ApplicationController
   
   def create
     @comment = Comment.new(comment_params)
-    if @comment.save 
-      @photo = Photo.find(@comment.photo_id)
-      @comments = @photo.comments
-      debugger
+    @comment.user_id = current_user.id
+    @comment.photo_id = params[:photo_id]
+    @comment.save 
+    @photo = Photo.find(@comment.photo_id)
       render 'api/photos/show'
     else
       render json: @comment.errors.full_messages, status: 422

@@ -3,8 +3,6 @@ import { Link} from 'react-router-dom';
 import { Redirect } from 'react-router';
 import MainNav from '../main_tools/main_nav_container';
 import Footer from '../main_tools/footer';
-import Comment from './comment_container';
-import CommentList from './comment_list_container';
 import Tag from './tag_container';
 // import Slider from 'react-slick';
 
@@ -16,19 +14,16 @@ class PhotoShow extends React.Component {
     };
     this.currentUser = this.props.currentUser;
     this.toggleEdit = this.toggleEdit.bind(this);
-    this.updateTitle = this.updateTitle.bind(this);
-    this.updateDescription = this.updateDescription.bind(this);
+    this.update = this.update.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
+    this.addComment = this.addComment.bind(this);
   }
   componentDidMount(){
     this.props.receivePhoto(parseInt(this.props.match.params.photoId));
   }
-  updateTitle(e) {
-    this.setState({title: e.currentTarget.value});
-  }
-  updateDescription(e) {
-    this.setState({description: e.currentTarget.value});
+  update(field) {
+    return e => this.setState({[field]: e.currentTarget.value});
   }
   handleSubmit(e) {
     e.preventDefault();
@@ -47,7 +42,24 @@ class PhotoShow extends React.Component {
       this.setState({edit: false});
     }
   }
+  addComment(e) {
+    e.preventDefault();
+    let comment = new FormData();
+    comment.append('comment[body]', this.state.body);
+    this.props.createComment(comment, this.props.photo.id).then(this.setState({body: ''}));
+    debugger
+  }
   render(){
+    let commentList = this.props.comments.map(comment => {
+      return <div className="user-comment" id={`${comment.id}`}>
+          <div className="commenter">
+            <div>
+              {comment.commenter.display_name}
+            </div>
+          </div>
+          <div>{comment.body}</div>
+        </div>
+    });
     if (this.state.edit === false){
       return (
         <React.Fragment>
@@ -78,6 +90,15 @@ class PhotoShow extends React.Component {
               </p>
             </div> 
             <div className="comments-container">
+              <div className="comment-list">
+                {commentList}
+              </div>
+              <div className="comment-form">
+                <form onSubmit={this.addComment}>
+                  <textarea className="comment-body" placeholder="Add a comment" onChange={this.update("body")} value={this.state.body} />
+                  <input className="submit-btn" type="submit" value="Comment"/>
+                </form>
+              </div>
               {/* <CommentList />
               <Comment />
               <Tag /> */}
@@ -105,14 +126,14 @@ class PhotoShow extends React.Component {
                     className="edit-input"
                     type="text"
                     value={this.props.photo.title}
-                    onChange={this.updateTitle} />
+                    onChange={this.update('title')} />
                </label>
                <label><p>Description</p>
                   <input
                     className="edit-input"
                     type="text"
                     value={this.props.photo.description}
-                    onChange={this.updateDescription} />
+                    onChange={this.update('description')} />
                </label>
                <button className="edit-update" onClick={this.handleSubmit}>Update</button>
             </div>

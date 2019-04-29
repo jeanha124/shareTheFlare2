@@ -1,14 +1,14 @@
-import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
-import { receiveComments, receiveComment, removeComment } from '../../actions/comment_actions';
-import Comment from './comment_container';
-import { getComments } from '../../reducers/selectors';
-import React from 'react';
+// import { connect } from 'react-redux';
+// import { withRouter } from 'react-router';
+// import { receiveComments, receiveComment, removeComment } from '../../actions/comment_actions';
+// import Comment from './comment_container';
+// import { getComments } from '../../reducers/selectors';
+// import React from 'react';
 
 // const msp = (state, ownProps) => {
 //   return {
 //     currentUser: state.session.currentUser,
-//     // comments: Object.values(state.entities.comments),
+//     comments: Object.values(state.entities.comments),
 //     errors: state.errors.comments
 //   };
 // };
