@@ -107,14 +107,10 @@
 
 
 .back {
-  position: relative;
-  top: 50px;
-  left: 25px;
 }
 
 .curr-photo {
   margin: 2px;
-  position: relative;
   flex-grow: 1;
   max-width: 400px;
   max-height: 100%;
@@ -156,30 +152,18 @@
 }
 
 .edit-btns {
-  position: absolute;
-  right: 27%;
-  top: 651px;
 }
 
 .tag-container {
-  position: absolute;
-  right: 257px;
-  top: -77px;
 }
 
 .tag-content {
   border: 1px solid grey;
   border-radius: 4px;
   padding: 5px;
-  position: absolute;
-  top: -4px; 
-  right: -1px;
 }
 
 .tag-button {
-  position: absolute;
-  right: 194px;
-  top: -80px;
   padding: 5px 15px;
   border-radius: 4px;
   background-color: #198fff;

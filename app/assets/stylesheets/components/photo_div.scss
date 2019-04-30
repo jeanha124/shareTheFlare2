@@ -22,15 +22,10 @@
 }
 
 .photo-cover {
-    position: absolute;
-    top: 50px;
 }
 
 
 .fullName, .displayname {
-    position: absolute;
-    left: 113px;
-    top: 38%;
 }
 
 .fullName {
@@ -46,8 +41,6 @@
     font-size: 16px;
     font-weight: 400;
     color: white;
-    position: absolute;
-    top: 52%;
 }
 
 .pic-container {
@@ -55,12 +48,10 @@
     display: flex;
     max-height: 650px;
     /* max-width: 1280px; */
-    position: relative;
 }
 
 .superfun-image {
     background-size: cover;
-    position: relative;
     margin: 0 auto;
     width: auto;
     height: auto;
@@ -71,8 +62,6 @@
 
 .back {
     display: inline;
-    position: absolute;
-    left: 15px;
     color: white;
 }
 
@@ -86,10 +75,6 @@ div.pads {
 }
 
 .user-info {
-    position: absolute;
-    left: 524px;
-    padding: 0 150px 0px 0px;
-    width: 300px;
-    height: 85px;
-    
+    width: 600px;
+    display: flex;
 }

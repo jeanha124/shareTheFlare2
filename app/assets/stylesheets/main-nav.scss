@@ -59,8 +59,6 @@
 }
 
 .activity, .explore1 {
-  position: absolute;
-  left: 234px;
   padding: 16px 20px;
 }
 
@@ -80,19 +78,14 @@
   display: flex;
   justify-items: end;
   align-items: center;
-  position: relative;
   border-top: 1px solid #ccc;
 }
 
 #about {
-  position: absolute;
-  left: 244px;
   padding: 16px 20px;
 }
 
 #photostream {
-  position: absolute;
-  left: 331px;
   padding: 16px 20px;
 }
 
@@ -102,14 +95,10 @@
 }
 
 #albums {
-  position: absolute;
-  left: 468px;
   padding: 16px 20px;
 }
 
 #faves {
-  position: absolute;
-  left: 569px;
   padding: 16px 20px;
 }
 
