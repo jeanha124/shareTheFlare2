@@ -17,6 +17,9 @@
   border-radius: 5px;
 }
 
+.submit-btn:hover {
+  background: #41a0f8;
+}
 .user-comment {
   width: 400px;
   max-height: 200px;
@@ -31,7 +34,9 @@
 }
 
 .comment-form {
-  width: 600px;
+  display: flex;
+  flex-direction: column;
+  width: 139px;
   height: 200px;
 }
 
