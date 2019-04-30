@@ -1657,12 +1657,13 @@ function (_React$Component) {
         }, this.props.photo.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "content-show"
         }, this.props.photo.description))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "comments-div"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "comments-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "comment-list"
-        }, commentList), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-          className: "comment-form"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        }, commentList), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+          className: "comment-form",
           onSubmit: this.addComment
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("textarea", {
           className: "comment-body",

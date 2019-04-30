@@ -89,13 +89,13 @@ class PhotoShow extends React.Component {
                 <br />
                 <span className="content-show">{this.props.photo.description}</span>
               </p>
-            </div> 
-            <div className="comments-container">
-              <div className="comment-list">
-                {commentList}
-              </div>
-              <div className="comment-form">
-                <form onSubmit={this.addComment}>
+            </div>
+            <div className="comments-div">
+              <div className="comments-container">
+                <div className="comment-list">
+                  {commentList}
+                </div>
+                <form className="comment-form" onSubmit={this.addComment}>
                   <textarea className="comment-body" placeholder="Add a comment" onChange={this.update("body")} value={this.state.body} />
                   <input className="submit-btn" type="submit" value="Comment"/>
                 </form>
