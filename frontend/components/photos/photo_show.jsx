@@ -18,6 +18,8 @@ class PhotoShow extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.addComment = this.addComment.bind(this);
+    this.removeableComment = this.removeableComment.bind(this);
+    this.deleteComment = this.deleteComment.bind(this);
   }
   componentDidMount(){
     this.props.receivePhoto(parseInt(this.props.match.params.photoId));
@@ -34,6 +36,16 @@ class PhotoShow extends React.Component {
     e.preventDefault();
     this.props.deletePhoto(this.props.match.params.photoId);
     this.props.history.push(`/photos/~/${this.props.currentUser.display_name}`);
+  }
+  deleteComment(e) {
+    e.preventDefault();
+    const selectMessage = this.props.comments.find(el => el.id === parseInt(e.currentTarget.id));
+    this.props.deleteComment(selectMessage.id);
+  }
+  removeableComment(e, i) {
+    if(this.props.currentUser && e === this.props.currentUser.id) {
+      return <div onClick={this.deleteComment} id={i}></div>;
+    }
   }
   toggleEdit(){
     if (this.state.edit === false){

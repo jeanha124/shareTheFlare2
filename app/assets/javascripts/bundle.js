@@ -1553,6 +1553,8 @@ function (_React$Component) {
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_this));
     _this.addComment = _this.addComment.bind(_assertThisInitialized(_this));
+    _this.removeableComment = _this.removeableComment.bind(_assertThisInitialized(_this));
+    _this.deleteComment = _this.deleteComment.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1583,6 +1585,25 @@ function (_React$Component) {
       e.preventDefault();
       this.props.deletePhoto(this.props.match.params.photoId);
       this.props.history.push("/photos/~/".concat(this.props.currentUser.display_name));
+    }
+  }, {
+    key: "deleteComment",
+    value: function deleteComment(e) {
+      e.preventDefault();
+      var selectMessage = this.props.comments.find(function (el) {
+        return el.id === parseInt(e.currentTarget.id);
+      });
+      this.props.deleteComment(selectMessage.id);
+    }
+  }, {
+    key: "removeableComment",
+    value: function removeableComment(e, i) {
+      if (this.props.currentUser && e === this.props.currentUser.id) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          onClick: this.deleteComment,
+          id: i
+        });
+      }
     }
   }, {
     key: "toggleEdit",
