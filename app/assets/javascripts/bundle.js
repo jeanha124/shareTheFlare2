@@ -1588,7 +1588,7 @@ function (_React$Component) {
     }
   }, {
     key: "deleteComment",
-    value: function deleteComment(e) {
+    value: function deleteComment(e, i) {
       e.preventDefault();
       var selectMessage = this.props.comments.find(function (el) {
         return el.id === parseInt(e.currentTarget.id);
@@ -1602,7 +1602,9 @@ function (_React$Component) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           onClick: this.deleteComment,
           id: i
-        });
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-trash"
+        }));
       }
     }
   }, {
@@ -1640,7 +1642,10 @@ function (_React$Component) {
             key: "".concat(comment.id)
           }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
             className: "commenter"
-          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.display_name)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.body));
+          }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.display_name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+            className: "comment-delete",
+            id: "".concat(comment.commenter_id)
+          }, _this3.removeableComment(comment.commenter_id, comment.id))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, comment.body));
         }
       });
 

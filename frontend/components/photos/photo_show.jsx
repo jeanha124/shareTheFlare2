@@ -37,14 +37,14 @@ class PhotoShow extends React.Component {
     this.props.deletePhoto(this.props.match.params.photoId);
     this.props.history.push(`/photos/~/${this.props.currentUser.display_name}`);
   }
-  deleteComment(e) {
+  deleteComment(e, i) {
     e.preventDefault();
     const selectMessage = this.props.comments.find(el => el.id === parseInt(e.currentTarget.id));
     this.props.deleteComment(selectMessage.id);
   }
   removeableComment(e, i) {
     if(this.props.currentUser && e === this.props.currentUser.id) {
-      return <div onClick={this.deleteComment} id={i}></div>;
+      return <div onClick={this.deleteComment} id={i}><i className="fas fa-trash"></i></div>;
     }
   }
   toggleEdit(){
@@ -67,6 +67,9 @@ class PhotoShow extends React.Component {
             <div className="commenter">
               <div>
                 {comment.display_name}
+              </div>
+              <div className="comment-delete" id={`${comment.commenter_id}`}>
+                {this.removeableComment(comment.commenter_id, comment.id)}
               </div>
             </div>
             <div>{comment.body}</div>
