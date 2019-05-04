@@ -1,16 +1,18 @@
 class Api::AlbumsController < ApplicationController
   def index
-    @albums = Album.all;
+    @albums = Album.all
   end
 
   def new
-    @album = Album.new;
+    @album = Album.new
   end
 
   def create
-    @album = Album.new(album_params);
-    @album.owner_id = current_user.id;
+    @album = Album.new(album_params)
+    @album.owner_id = current_user.id
     if @album.save
+      photo_ids = params[:album][:photo_ids]
+
       render :show
     else
       render json: @album.errors.full_messages, status: 422
@@ -18,12 +20,12 @@ class Api::AlbumsController < ApplicationController
   end
   
   def show
-    @album = Album.find(params[:id]);
+    @album = Album.find(params[:id])
   end
 
   def update
-    @album = current_user.albums.find(params[:id]);
-    @album.update(album_params);
+    @album = current_user.albums.find(params[:id])
+    @album.update(album_params)
     if @album
       render :show
     else
@@ -32,8 +34,8 @@ class Api::AlbumsController < ApplicationController
   end
 
   def destroy
-    @album = current_user.albums.find(params[:id]);
-    @album.destroy;
+    @album = current_user.albums.find(params[:id])
+    @album.destroy
     render :show
     
   end
@@ -41,7 +43,7 @@ class Api::AlbumsController < ApplicationController
 
   private
   def album_params
-    params.require(:album).permit(:owner_id, :title);
+    params.require(:album).permit(:owner_id, :title, photo_ids: [])
   end
 
 end
